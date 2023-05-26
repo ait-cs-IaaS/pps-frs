@@ -20,9 +20,13 @@ pip install requirements.txt
 ## Directory Structure
 
 `conf` - folder containing a data file for predicting facial landmarks for encoding faces
+
 `db` - folder containing sqlite3 databases
+
 `faces` - folder of images for each face, which are inserted into the database
+
 `log` - folder containing log files
+
 `tmp` - test folder, can be ignored
 
 ## Starting the Server
