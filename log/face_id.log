@@ -1,0 +1,271 @@
+{
+    "timestamp": "22-05-2023 @ 14:46:43",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 09:44:05",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 09:44:43",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 09:44:59",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:43:01",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:44:23",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:44:36",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:45:21",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:45:44",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:46:05",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:46:16",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:48:00",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:48:59",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:49:19",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:49:34",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:57:16",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 14:58:18",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:01:10",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:01:53",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:03:44",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:04:26",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:06:22",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:08:26",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:08:50",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:09:39",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:09:58",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:11:59",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:12:25",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:12:58",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:13:21",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:14:50",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:15:27",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:16:39",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:17:06",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:18:49",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:19:35",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:22:10",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:23:43",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:23:59",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:24:50",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "23-05-2023 @ 15:25:02",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.5383588748716858."
+}{
+    "timestamp": "24-05-2023 @ 06:31:19",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.99999."
+}{
+    "timestamp": "24-05-2023 @ 06:32:38",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.99999."
+}{
+    "timestamp": "24-05-2023 @ 06:34:55",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.99999."
+}{
+    "timestamp": "24-05-2023 @ 06:46:33",
+    "request": "<Request 'http://192.168.10.209:4410/match/' [POST]>",
+    "source_ip": "192.168.10.66",
+    "log_type": "INFO",
+    "log_content": "[INFO] Best match for image provided: Employee 101. Confidence Score 0.99999."
+}
