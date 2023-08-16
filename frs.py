@@ -16,10 +16,10 @@ import pprint
 #   `sudo apt-get update && sudo apt-get install ffmpeg libsm6 libxext6  -y`
 
 # Ignore deprecation warnings for cleaner output.
-warnings.filterwarnings("ignore", category=DeprecationWarning) 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
-''' DEBUGGING 
+""" DEBUGGING 
 
 # For Debugging Only
 # People for predictions!
@@ -29,63 +29,49 @@ chris_rock      = ['faces/chris_rock/chris_rock_002.jpg', 'Chris Rock']
 rafael_grossi   = ['faces/rafael_grossi/rafael_grossi_002.jpg', 'Rafael Grossi']
 predictions     = [dwayne_johnson, shania_twain, chris_rock, rafael_grossi]
 
-END DEBUGGING '''
+END DEBUGGING """
 
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("conf/shape_predictor_68_face_landmarks.dat")
 
-# By default skip the database creation step.
-SKIP_SETUP = True
-# If a command line argument is supplied (len(sys.argv) is always at least 1 - the program itself is an argument)
-if len(sys.argv) > 1:
-    # If the user types `python3 frs.py initdb`
-    if sys.argv[1] == "initdb":
-        SKIP_SETUP = False
-    else:
-        print(f'[ERROR] Unexpected user input argument supplied. Argument `{sys.argv[1]}` not recognised.')
-        print(f'\t[INFO] The only argument that can be supplied is `initdb`, which will recreate and reinitialise the database. By default this step is skipped when no arguments are supplied.')
-        print(f'\t[INFO] To run the program without recreating and initialising the db, try `python3 frs.py`')
-        print(f'\t[INFO] To run the program and recreate and initialise the db, try `python3 frs.py initdb`')
-        print('[EXIT] The program will now terminate.')
-        sys.exit(0)
-
-
 # Define app, ip address, and port number
 app = Flask(__name__)
-ip_addr =  '192.168.10.209'
-port = 4410
+# ip_addr =  '192.168.10.209'
+# port = 4410
+
 
 # Route for default request @ http://{ip_addr}:{port}/
 # Requires:         None
 # Returns:          message:JSON - Information message identifying the program.
 # Expected Action:  Returns a fairly standard default JSON message to the request
-@app.route('/')
+@app.route("/")
 def hello():
-    return jsonify(message='[INFO] Connection established to the Facial Recognition System. Please use API commands.')
+    return jsonify(
+        message="[INFO] Connection established to the Facial Recognition System. Please use API commands."
+    )
 
 
 # Function to log to `all.log` and a specific file of the user's choosing
 # Requires:         filename:string - the filename of the user-chosen log
-#					request:string - the request that is being processed,
+# 					request:string - the request that is being processed,
 #                                       use `ip_addr` (this machine's IP)  if it's just an internal method call
-#					src_ip:string - the source ip address that made the request - can be 127.0.0.1 if an internal call (e.g. auth.log)
-#					log_type:int - a number representing the type of log, 0=INFO, 1=ERROR, 2=FATAL
+# 					src_ip:string - the source ip address that made the request - can be 127.0.0.1 if an internal call (e.g. auth.log)
+# 					log_type:int - a number representing the type of log, 0=INFO, 1=ERROR, 2=FATAL
 # 					content:string - data to be written to the file
 # Returns:          return_code:int - a return code for the logging attempt, 0=FAIL, 1=SUCCESS
 # Expected Action:  Open log file, write JSON data, close file
 def log(filename, request, src_ip, log_type, content):
+    filename = "log/" + filename
 
-    filename = 'log/' + filename
-    
-    return_code = 0 # Default = FAIL
-    
+    return_code = 0  # Default = FAIL
+
     # Get timestamp
     date_time = datetime.now()
     timestamp = date_time.strftime("%d-%m-%Y @ %H:%M:%S")
-    
+
     # Set the string for the log_type
-    
+
     # log_type = 0 # info - information including authentication success and failure
     # log_type = 1 # error - errors in program execution
     # log_type = 2 # fatal - fatal errors that cause the program to exit/shutdown
@@ -98,23 +84,23 @@ def log(filename, request, src_ip, log_type, content):
     else:
         print("[ERROR] Error writing to log file!")
         return return_code
-    
+
     req = str(request)
     ip = str(src_ip)
     log_content = content
 
     log_entry = {
-        "timestamp":timestamp,
-        "request":req,
-        "source_ip":ip, 
-        "log_type":str_log_type,
-        "log_content":log_content
+        "timestamp": timestamp,
+        "request": req,
+        "source_ip": ip,
+        "log_type": str_log_type,
+        "log_content": log_content,
     }
     log_entry_dump = json.dumps(log_entry, indent=4)
 
     # Write to master log
     try:
-        with open('log/all.log', 'a') as file:
+        with open("log/all.log", "a") as file:
             file.write(log_entry_dump)
             file.close()
             return_code = 1
@@ -123,13 +109,13 @@ def log(filename, request, src_ip, log_type, content):
 
     # Write to individual log
     try:
-        with open(filename, 'a') as file:
+        with open(filename, "a") as file:
             file.write(log_entry_dump)
             file.close()
             return_code = 1
     except:
         print("[ERROR] Error writing to log file!")
-    
+
     pprint.pprint(log_entry)
 
     return return_code
@@ -141,21 +127,21 @@ def log(filename, request, src_ip, log_type, content):
 # Expected Action:  Connect to db, query, return all data, log
 def read_database():
     req = "internal_method_call"
-    src_ip = ip_addr
+    src_ip = "localhost"
     try:
-        conn = sqlite3.connect('db/faces.db')
+        conn = sqlite3.connect("db/faces.db")
         cursor = conn.cursor()
-        cursor.execute('''SELECT * FROM faces;''')
+        cursor.execute("""SELECT * FROM faces;""")
         db_rows = cursor.fetchall()
         cursor.close()
         conn.close()
-        msg = '[INFO] Data read from database and returned.'
-        log('read_db.log', req, src_ip, 0, msg)
+        msg = "[INFO] Data read from database and returned."
+        log("read_db.log", req, src_ip, 0, msg)
         return jsonify(data=db_rows)
     except:
         msg = "[ERROR] Error reading data from database."
-        log('read_db.log', req, src_ip, 1, msg)
-    
+        log("read_db.log", req, src_ip, 1, msg)
+
 
 # Function to get a face encoding (facial feature mapping)
 # Requires:         image_path:string - a filepath to an image of a face, e.g. 'path/to/face.jpg'
@@ -168,87 +154,8 @@ def get_face_encoding(image_path):
     face_locations = face_recognition.face_locations(image)
     face_encodings = face_recognition.face_encodings(image, face_locations)
     face_encoding = face_encodings[0]
-    
+
     return face_encoding
-
-
-# Function to encode face and store it in a database
-# Requires:         image_path:string - a filepath to an image of a face, e.g. 'path/to/face.jpg'
-#                   name:string a string
-#                   employee_id:int - the employee_id that matches employee_id the Access Control System (separate machine)
-# Returns:          None
-# Expected Action:  Connect to db, encode face, convert to string, store in db along with other inputs, log
-def encode_and_store_face(employee_id, name, image_path ):
-    req = "internal_method_call"
-    src_ip = ip_addr
-    try:
-        conn = sqlite3.connect('db/faces.db')
-        cursor = conn.cursor()
-
-        # Load the image
-        image = face_recognition.load_image_file(image_path)
-        # Encode image
-        face_locations = face_recognition.face_locations(image)
-        face_encodings = face_recognition.face_encodings(image, face_locations)
-        face_encoding = face_encodings[0]
-
-        # Encoding the face in base64
-        face_string = face_encoding.tostring()
-
-        # Store the face encoding in the database
-        cursor.execute("INSERT INTO faces (employee_id, name, encoding) VALUES (?, ?, ?)", (employee_id, name, face_string))
-        conn.commit()
-        msg = f'[INFO] Inserted the face of [{employee_id}] {name} into the database.\n\t{image_path}'
-        log('write_db.log', req, src_ip, 0, msg)
-        cursor.close()
-        conn.close()
-    except:
-        msg = f'[ERROR] Failed to insert the face of [{employee_id}] {name} into the database.\n\t{image_path}'
-        msg = msg + ' ' + '[EXIT] Exiting program now.'
-        log('write_db.log', req, src_ip, 2, msg)
-        sys.exit(0)
-
-
-# Function for initialising database with faces.
-# Requires:         None
-# Returns:          None
-# Expected Action:  Connect to db, create table and encode and insert faces from local files, log
-def setup_db():
-    global people
-    req = "internal_method_call"
-    src_ip = ip_addr
-    msg = '[START] Initialising database.'
-    try:
-        conn = sqlite3.connect('db/faces.db')
-        cursor = conn.cursor()
-        cursor.execute('''DROP TABLE IF EXISTS faces;''')
-        cursor.execute('''CREATE TABLE IF NOT EXISTS faces
-                    (employee_id INTEGER PRIMARY KEY,
-                    name text UNIQUE NOT NULL,
-                    encoding TEXT NOT NULL)''')
-        msg = msg + '' + '[INFO] Table created successfully.'
-        
-        cursor.close()
-        conn.close()
-    except:
-        msg = '[FAIL] Unable to create table.'
-        msg = msg + ' ' + '[EXIT] Exiting program now.'
-        log('write_db.log', req, src_ip, 2, msg)
-        sys.exit(0)
-    
-    # People for inserting into database!
-    dwayne_johnson  = [101, 'Dwayne Johnson',   'faces/dwayne_johnson/dwayne_johnson_001.jpg']
-    shania_twain    = [102, 'Shania Twain',     'faces/shania_twain/shania_twain_001.jpg']
-    chris_rock      = [103, 'Chris Rock',       'faces/chris_rock/chris_rock_001.jpg']
-    rafael_grossi   = [104, 'Rafael Grossi',    'faces/rafael_grossi/rafael_grossi_001.jpg']
-    people          = [dwayne_johnson, shania_twain, chris_rock, rafael_grossi]
-
-    msg = msg + ' ' + '[INFO] Adding faces to database...'
-    for person in people:
-        # Encode the image from the path (2) and store the encoding, employee_id (0) and the name (1) in the database
-        encode_and_store_face(person[0], person[1], person[2])
-    
-    log('write_db.log', req, src_ip, 0, msg)
 
 
 # Function for loading all encoded faces from the databases
@@ -257,28 +164,28 @@ def setup_db():
 # Expected Action:  Connect to db, select all encoding, return all encodings in list
 def load_db_face_encodings():
     req = "internal_method_call"
-    src_ip = ip_addr
+    src_ip = "localhost"
     try:
-        conn = sqlite3.connect('db/faces.db')
+        conn = sqlite3.connect("db/faces.db")
         cursor = conn.cursor()
         cursor.execute("SELECT employee_id, name, encoding FROM faces")
         face_encodings = cursor.fetchall()
         cursor.close()
         conn.close()
         msg = "[INFO] Loaded face encondings from database."
-        log('read_db.log', req, src_ip, 0, msg)
+        log("read_db.log", req, src_ip, 0, msg)
         return face_encodings
     except:
-        msg = '[FAIL] Failed to load face encodings from database.'
-        msg = msg + ' ' + '[EXIT] Exiting program now.'
-        log('read_db.log', req, src_ip, 2, msg)
+        msg = "[FAIL] Failed to load face encodings from database."
+        msg = msg + " " + "[EXIT] Exiting program now."
+        log("read_db.log", req, src_ip, 2, msg)
         sys.exit(0)
 
 
 # Function to compare two face encodings and produce a simlarity score
 # Requires:         known_face:numpy.ndarray<float> - a face encoding that is linked to/stored in the database (i.e. a known face)
 #                   input_face_encoding:numpy.ndarray<float> - a face encoding from an input image
-# Returns:          similarity_score:float - a score between (roughly between -1 and 1) that reveals how close the faces are. 
+# Returns:          similarity_score:float - a score between (roughly between -1 and 1) that reveals how close the faces are.
 # Expected Action:  Calculates the face distance between the two arrays of face encodings, returns a similarity score
 def compare_faces(known_face, input_face_encoding):
     # Calculate the Euclidean distance between two face encodings
@@ -289,14 +196,13 @@ def compare_faces(known_face, input_face_encoding):
 
 
 # Function to find the best match for a given image by cross-referencing the image to all known faces in the database
-# Requires:         input_image_path:string - a filepath to an image of a face 
+# Requires:         input_image_path:string - a filepath to an image of a face
 # Returns:          best_match_id:int - the ID of the best matching face in the database
 #                   best_match_score:flaot - the similarity score for the best match in the database - this can be used to define thresholds.
 # Expected Action:  Encode input face, get all encoded faces from db, compare input face to all in the db and get scores for similarity, return best matching face id and score
 def match_image(input_image_path):
-   
     # Get encoding of the input image
-    input_face_encoding = get_face_encoding(input_image_path)#input_face_encodings[0]
+    input_face_encoding = get_face_encoding(input_image_path)  # input_face_encodings[0]
 
     # Load the face encodings from the database
     db_face_encodings = load_db_face_encodings()
@@ -317,9 +223,9 @@ def match_image(input_image_path):
         if similarity_score > best_match_score:
             best_match_score = similarity_score
             best_match_id = employee_id
-        
-        print(f'\t\t[INFO] Similarity score for {face_name}: {similarity_score}')
-    
+
+        print(f"\t\t[INFO] Similarity score for {face_name}: {similarity_score}")
+
     return best_match_id, best_match_score
 
 
@@ -327,55 +233,49 @@ def match_image(input_image_path):
 # Requires:         None - although an image must be sent via POST request with the key of `image`
 # Returns:          JSON(data:list) - a list containing the best match ID of the face, and the similarity score
 # Expected Action:  Take input image and call the match() function, return the results as JSON
-@app.route('/match/', methods=['POST'])
+@app.route("/match/", methods=["POST"])
 def process_request():
     req = str(request)
     src_ip = str(request.remote_addr)
 
     data = request.json
-    image_req = base64.b64decode(data['image'])
-    
+    image_req = base64.b64decode(data["image"])
+
     with open("tmp_face.jpg", "wb") as fh:
         fh.write(image_req)
-    
+
     if image_req != None:
         try:
-            best_match_id, best_match_score = match_image('tmp_face.jpg')
+            best_match_id, best_match_score = match_image("tmp_face.jpg")
             data = [best_match_id, best_match_score]
             msg = f"[INFO] Best match for image provided: Employee {best_match_id}. Confidence Score {best_match_score}."
-            log('face_id.log', req, src_ip, 0, msg)
-            return jsonify(data = data)
+            log("face_id.log", req, src_ip, 0, msg)
+            return jsonify(data=data)
         except:
             msg = "[FAIL] Error: Match not found for image provided."
-            log('face_id.log', req, src_ip, 0, msg)
-            return jsonify(message = msg)
-
+            log("face_id.log", req, src_ip, 0, msg)
+            return jsonify(message=msg)
 
 
 # Main Program!
 if __name__ == "__main__":
-    if SKIP_SETUP == False:
-        setup_db()
-    else:
-        print('[INFO] Skipping database initialisation.')
-
     # f_e = get_face_encoding('input_face.jpg')
     # print(f_e)
     # best_match_id, best_match_score = match_image('input_face.jpg')
     # data = [best_match_id, best_match_score]
     # msg = f"[INFO] Best match for image provided: Employee {best_match_id}. Confidence Score {best_match_score}."
     # print(msg)
-    
+
     flask_msg = "[FLASK] Starting Flask Server..."
-    log('system_state.log', '__main__', ip_addr, 0, flask_msg)
+    log("system_state.log", "__main__", "localhost", 0, flask_msg)
     try:
-        app.run(host = ip_addr, port = port)
+        app.run()
     except:
-        msg = '[ERROR] Fault encountered while attempting to run the Flask API server. [EXIT] The system will now exit.'
-        log('system_state.log', '__main__', ip_addr, 2, flask_msg)
+        msg = "[ERROR] Fault encountered while attempting to run the Flask API server. [EXIT] The system will now exit."
+        log("system_state.log", "__main__", "localhost", 2, flask_msg)
         sys.exit(0)
 
-    ''' DEBUGGING 
+    """ DEBUGGING 
     # For Debugging Only
     for person in predictions:
         print(f'\n[INFO] Predicting {person[1]}:')
@@ -392,4 +292,4 @@ if __name__ == "__main__":
             conn.close()
         except:
             print('[FAIL] Best Match ID not returned...')
-    END DEBUGGING '''
+    END DEBUGGING """
