@@ -10,6 +10,14 @@ import warnings
 from datetime import datetime
 import json
 import pprint
+import os
+
+from flask_cors import CORS
+
+
+
+
+
 
 
 # Had to do the following too:
@@ -33,10 +41,25 @@ END DEBUGGING """
 
 
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("conf/shape_predictor_68_face_landmarks.dat")
+
+model_path = os.path.abspath("C:/pps-frs/shape_predictor_68_face_landmarks.dat")
+
+# Verify the absolute path
+print("Absolute path to model file:", model_path)
+
+# Check if the file exists
+if os.path.exists(model_path):
+    predictor = dlib.shape_predictor(model_path)
+else:
+    print("Error: Model file not found.")
+
 
 # Define app, ip address, and port number
 app = Flask(__name__)
+
+CORS(app)
+
+
 # ip_addr =  '192.168.10.209'
 # port = 4410
 
@@ -255,6 +278,41 @@ def process_request():
             msg = "[FAIL] Error: Match not found for image provided."
             log("face_id.log", req, src_ip, 0, msg)
             return jsonify(message=msg)
+        
+
+
+def format_all_log(input_file, output_file):
+    # Read data from the input file
+    with open(input_file, 'r') as file:
+        log_entries = file.read().strip()
+ 
+    # Modify the delimiter to properly split JSON objects
+    json_objects = []
+    start = 0
+    for end in range(len(log_entries)):
+        if log_entries[end] == '}':
+            json_objects.append(json.loads(log_entries[start:end + 1]))
+            start = end + 1
+ 
+    # Write formatted data into the output JSON file
+    with open(output_file, 'w') as file:
+        file.write(json.dumps(json_objects, indent=4))
+ 
+# Example usage:
+input_file_path = 'log/all.log'
+output_file_path = 'formatted_all.log.json'
+format_all_log(input_file_path, output_file_path)
+
+
+
+@app.route('/api/get_data', methods=['GET'])
+def get_data():
+    # Read your JSON file and return it
+    # For simplicity, let's assume you have a file named data.json in the same directory
+    with open('formatted_all.log.json', 'r') as file:
+        data = file.read()
+    return data
+
 
 
 # Main Program!
@@ -269,7 +327,7 @@ if __name__ == "__main__":
     flask_msg = "[FLASK] Starting Flask Server..."
     log("system_state.log", "__main__", "localhost", 0, flask_msg)
     try:
-        app.run()
+        app.run(debug=True, port=7001)
     except:
         msg = "[ERROR] Fault encountered while attempting to run the Flask API server. [EXIT] The system will now exit."
         log("system_state.log", "__main__", "localhost", 2, flask_msg)
