@@ -281,7 +281,7 @@ def process_request():
         
 
 
-def format_all_log(input_file, output_file):
+def format_recent_logs(input_file, output_file, limit):
     # Read data from the input file
     with open(input_file, 'r') as file:
         log_entries = file.read().strip()
@@ -293,15 +293,18 @@ def format_all_log(input_file, output_file):
         if log_entries[end] == '}':
             json_objects.append(json.loads(log_entries[start:end + 1]))
             start = end + 1
+
+    # Limit the number of logs to the specified 'limit' from the end
+    json_objects = json_objects[-limit:]
  
     # Write formatted data into the output JSON file
     with open(output_file, 'w') as file:
-        file.write(json.dumps(json_objects, indent=4))
- 
+        file.write(json.dumps(json_objects, indent=20))
+
 # Example usage:
 input_file_path = 'log/all.log'
 output_file_path = 'formatted_all.log.json'
-format_all_log(input_file_path, output_file_path)
+format_recent_logs(input_file_path, output_file_path, limit=20)
 
 
 

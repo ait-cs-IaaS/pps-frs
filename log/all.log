@@ -664,4 +664,148 @@
     "source_ip": "localhost",
     "log_type": "INFO",
     "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "16-01-2024 @ 15:30:01",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "16-01-2024 @ 15:30:11",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "17-01-2024 @ 08:57:39",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "17-01-2024 @ 08:57:42",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "18-01-2024 @ 11:02:40",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "18-01-2024 @ 11:02:43",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "18-01-2024 @ 21:13:49",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "18-01-2024 @ 21:13:53",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "19-01-2024 @ 11:56:22",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "19-01-2024 @ 11:56:32",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 11:45:07",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 11:45:10",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:05:09",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:05:19",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:05:49",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "FATAL",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:05:50",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "FATAL",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:06:03",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:06:14",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:07:38",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "FATAL",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:07:39",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "FATAL",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:07:58",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "20-01-2024 @ 12:08:09",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "21-01-2024 @ 08:55:20",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
+}{
+    "timestamp": "21-01-2024 @ 08:55:23",
+    "request": "__main__",
+    "source_ip": "localhost",
+    "log_type": "INFO",
+    "log_content": "[FLASK] Starting Flask Server..."
 }
