@@ -295,7 +295,7 @@ def format_recent_logs(input_file, output_file, limit):
             start = end + 1
 
     # Limit the number of logs to the specified 'limit' from the end
-    json_objects = json_objects[-limit:]
+    json_objects = json_objects[::-1][:limit]
  
     # Write formatted data into the output JSON file
     with open(output_file, 'w') as file:
